@@ -1,0 +1,16 @@
+-- Create a sample table
+CREATE TABLE Users (
+    UserId INT PRIMARY KEY IDENTITY(1,1),
+    UserName NVARCHAR(50),
+    Email NVARCHAR(50)
+);
+
+-- Create a stored procedure for inserting data
+CREATE PROCEDURE InsertUser
+    @UserName NVARCHAR(50),
+    @Email NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO Users (UserName, Email)
+    VALUES (@UserName, @Email);
+END;
